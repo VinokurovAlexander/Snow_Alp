@@ -1,9 +1,54 @@
 .page-header {
   box-sizing: border-box;
   width: 320px;
+  min-height: 781px;
   margin: 0 auto;
   padding: 0 15px;
   padding-top: 25px;
 
   background-image: url('../img/bg-snow-clearance-mobile.png');
+}
+
+.page-header__nav {
+  margin-bottom: 36px;
+}
+
+.page-header__title {
+  max-width: 290px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 800;
+  color: $color-secondary;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.page-header__price {
+  display: block;
+
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 37px;
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.page-header__moto {
+  display: block;
+
+  width: 290px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-align: center;
 }

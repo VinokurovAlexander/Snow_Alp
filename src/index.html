@@ -6,7 +6,7 @@
     <title>Snow Alp</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="page-header">
@@ -17,13 +17,25 @@
         <b class="main-nav__moto">
           Чистка снега и наледи с кровли
         </b>
-        <button class="main-nav__menu-btn" type="button">
+        <button class="main-nav__menu-btn burger-btn" type="button">
           <span class="visually-hidden">Кнопка открытия меню</span>
         </button>
         <a class="main-nav__telephone" href="tel: +74953355353">
           +7 495 <span>335 53 53</span>
         </a>
       </nav>
+      <h1 class="page-header__title">Очистка снега с крыш</h1>
+      <b class="page-header__price">Промышленными альпинистами от 25 руб/м<sup>2</sup></b>
+      <b class="page-header__moto">Оставьте заявку — в течение часа к вам выедет специалист</b>
+      <form class="page-header__form application-form">
+        <label class="visually-hidden" for="user-name">Поле для ввода ФИО</label>
+        <input class="application-form__input" type="text" id="user-name" placeholder="Константин Сыромятников">
+        <label class="visually-hidden" for="telephone">Поле для ввода телефона</label>
+        <input class="application-form__input application-form__input--tel" type="tel" id="telephone" placeholder="+7 (___) ___-__-__">
+        <input class="visually-hidden application-form__checkbox" type="checkbox" id="privacy-policy" checked>
+        <label class="application-form__label application-form__label--privacy-policy" for="privacy-policy">Я согласен с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
+        <button class="application-form__btn btn" type="submit">Отправить заявку</button>
+      </form>
     </header>
   </body>
 </html>

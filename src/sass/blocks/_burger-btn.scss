@@ -1,0 +1,28 @@
+.burger-btn {
+  position: relative;
+
+  width: 24px;
+  height: 15px;
+
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 24px;
+    height: 2px;
+
+    background-color: #ffffff;
+    box-shadow:
+        0 6px 0 0 #ffffff,
+        0 12px 0 0 #ffffff;
+  }
+}

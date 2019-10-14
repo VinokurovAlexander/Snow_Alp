@@ -6,12 +6,14 @@
 }
 
 .main-nav__link {
+  margin-bottom: 7px;
+
   font-family: "Impact";
   font-size: 34px;
   line-height: 40px;
   text-transform: uppercase;
   text-decoration: none;
-  color: #50b1d7;
+  color: $color-main;
   text-shadow: 2px 2px 4px #000000;
 
   span {
@@ -20,8 +22,31 @@
 }
 
 .main-nav__moto {
+  margin-bottom: 7px;
+
   box-sizing: border-box;
   width: 140px;
   padding-left: 10px;
   font-weight: 400;
+}
+
+.main-nav__telephone {
+  width: 199px;
+
+  font-size: 24px;
+  line-height: 48px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: #ffffff;
+
+  span {
+    color: $color-main;
+    transition: all 0.5s ease;
+  }
+
+  &:hover span {
+    color: $color-secondary;
+  }
 }

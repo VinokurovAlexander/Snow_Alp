@@ -1,0 +1,68 @@
+.application-form__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 23px;
+  margin-bottom: 21px;
+
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 10px;
+
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.application-form__input--tel {
+  margin-bottom: 30px;
+}
+
+.application-form__label {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.application-form__label--privacy-policy {
+  display: inline-block;
+  margin-bottom: 24px;
+
+  box-sizing: border-box;
+  width: 280px;
+  padding-left: 32px;
+
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.application-form__label--privacy-policy {
+  position: relative;
+
+  &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 5px;
+
+      width: 9px;
+      height: 9px;
+
+      background-color: #666666;
+      border-radius: 2px;
+      box-shadow: 0 0 0 6px #ffffff;
+
+      transition: all 0.5s ease;
+  }
+}
+
+.application-form__label--privacy-policy:hover::before {
+  background-color: #989898;
+}
+
+.application-form__checkbox:checked + .application-form__label::before,
+.application-form__checkbox:active + .application-form__label::before {
+  background-color: $color-main;
+}
+
+.application-form__checkbox:checked + .application-form__label--privacy-policy:hover::before {
+  background-color: #989898;
+}
