@@ -19,6 +19,10 @@
   span {
     color: #ffffff;
   }
+
+  @media (min-width: 330px) {
+    order: 2;
+  }
 }
 
 .main-nav__moto {
@@ -28,6 +32,10 @@
   width: 140px;
   padding-left: 10px;
   font-weight: 400;
+
+  @media (min-width: 330px) {
+    order: 3;
+  }
 }
 
 .main-nav__telephone {
@@ -48,5 +56,15 @@
 
   &:hover span {
     color: $color-secondary;
+  }
+
+  @media (min-width: 330px) {
+    order: 4;
+  }
+}
+
+.main-nav__menu-btn {
+  @media (min-width: 330px) {
+    order: 1;
   }
 }
