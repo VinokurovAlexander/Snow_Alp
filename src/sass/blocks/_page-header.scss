@@ -20,6 +20,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    padding-top: 69px;
     min-height: 800px;
 
     background-image: url('../img/bg-snow-clearance-desktop.png');
@@ -27,7 +28,7 @@
 }
 
 .page-header__wrapper {
-  max-width: 1290px;
+  max-width: 1292px;
   width: 91%;
   margin: 0 auto;
 }

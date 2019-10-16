@@ -9,10 +9,28 @@
     box-sizing: border-box;
     width: 310px;
     min-height: 95vh;
-    padding: 57px 25px;
+    padding: 0 25px;
+    padding-top: 57px;
 
     background-color: #ffffff;
     color: #000000;
+
+    @media (min-width: $desktop-width) {
+      left: 50%;
+      transform: translateX(-50%);
+
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+
+      width: 1292px;
+      min-height: 125px;
+      padding: 0;
+      padding-top: 31px;
+
+      background-color: transparent;
+      color: #ffffff;
+    }
 }
 
 .main-menu--show {
@@ -37,4 +55,8 @@
 
 .main-menu__nav-list {
   margin-bottom: 37px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
 }

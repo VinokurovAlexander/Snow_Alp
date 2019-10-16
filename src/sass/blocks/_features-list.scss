@@ -5,10 +5,26 @@
   list-style: none;
   font-size: 12px;
   line-height: 16px;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-wrap: wrap;
+    order: 1;
+
+    width: 1292px;
+  }
 }
 
 .features-list__item {
   margin-bottom: 19px;
+
+  @media (min-width: $desktop-width) {
+    margin-right: 5%;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
 }
 
 .features-list__link {
