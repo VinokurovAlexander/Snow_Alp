@@ -75,6 +75,24 @@
         </form>
       </div>
     </header>
+    <section class="callback-modal callback-modal--show">
+      <h2 class="callback-modal__title">Заявка на обратный звонок</h2>
+      <b class="callback-modal__moto">
+        Оставьте заявку и мы перезвоним вам в течение 15 минут
+      </b>
+        <form class="callback-modal__form application-form">
+          <label class="visually-hidden" for="modal-user-name">Поле для ввода ФИО</label>
+          <input class="application-form__input" type="text" id="modal-user-name" placeholder="Константин Сыромятников">
+          <label class="visually-hidden" for="telephone">Поле для ввода телефона</label>
+          <input class="application-form__input application-form__input--tel" type="tel" id="telephone" placeholder="+7 (___) ___-__-__">
+          <input class="visually-hidden application-form__checkbox" type="checkbox" id="privacy-policy" checked>
+          <label class="application-form__label application-form__label--privacy-policy" for="privacy-policy">Я согласен с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
+          <button class="application-form__btn btn btn--modal" type="submit">Перезвоните мне</button>
+          <button class="application-form__close-btn close-btn" type="button">
+            <span class="visually-hidden">Кнопка закрытия меню</span>
+          </button>
+        </form>
+    </section>
     <script src="js/menu.js"></script>
   </body>
 </html>
