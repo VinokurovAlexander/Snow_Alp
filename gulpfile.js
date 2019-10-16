@@ -21,8 +21,7 @@ gulp.task("html", function(){
 });
 gulp.task("sprite", function() {
   return gulp.src([
-    "src/img/icon-*.svg",
-    "src/img/logo-*.svg",
+    "src/img/*.svg",
   ])
   .pipe(svgstore({
     inlineSvg: true
@@ -53,6 +52,7 @@ gulp.task("server", function() {
 
     gulp.watch("src/img/**/icon-*.svg"), gulp.series("sprite", "html", "refresh");
     gulp.watch("src/img/**/*.{jpg,png,svg}", gulp.series("copy", "refresh"));
+    gulp.watch("src/js/**/*.js", gulp.series("copy", "refresh"));
     gulp.watch("src/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
     gulp.watch("src/*.html", gulp.series("html", "refresh"));
 });

@@ -1,0 +1,40 @@
+.main-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+
+    display: none;
+
+    box-sizing: border-box;
+    width: 310px;
+    min-height: 95vh;
+    padding: 57px 25px;
+
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.main-menu--show {
+  display: block;
+  animation: menu-show 0.8s ease-out;
+}
+
+@keyframes menu-show {
+  0% {
+    transform: translateX(-200%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.main-menu__close-btn {
+  top: 21px;
+  right: 30px;
+}
+
+.main-menu__nav-list {
+  margin-bottom: 37px;
+}

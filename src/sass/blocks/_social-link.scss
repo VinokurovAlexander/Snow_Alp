@@ -1,0 +1,25 @@
+.social-link {
+  display: block;
+  box-sizing: border-box;
+  width: 252px;
+  padding: 15px;
+  margin: 0 auto;
+
+  border-radius: 10px;
+  background-color: #313131;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #484848;
+  }
+}
+
+.social-link__img {
+  margin-bottom: -8px;
+}

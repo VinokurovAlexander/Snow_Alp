@@ -1,4 +1,7 @@
 .application-form {
+  max-width: 847px;
+  margin: 0 auto;
+
   @media (min-width: 650px) {
     display: flex;
     flex-wrap: wrap;
@@ -22,6 +25,10 @@
 
   @media (min-width: 650px) {
     width: 48%;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 411px;
   }
 }
 

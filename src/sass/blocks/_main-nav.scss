@@ -29,7 +29,10 @@
     order: 2;
   }
 
-  @media (min-width: $tablet-width) {
+  // @media (min-width: $tablet-width) {
+  //   margin-right: 1%;
+  // }
+  @media (min-width: 548px) {
     margin-right: 1%;
   }
 }
@@ -88,7 +91,10 @@
     order: 1;
   }
 
-  @media (min-width: $tablet-width) {
+  // @media (min-width: $tablet-width) {
+  //   margin-right: 5%;
+  // }
+  @media (min-width: 548px) {
     margin-right: 5%;
   }
 }
