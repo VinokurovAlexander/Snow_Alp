@@ -1,3 +1,12 @@
+.application-form {
+  @media (min-width: 650px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
 .application-form__input {
   box-sizing: border-box;
   width: 100%;
@@ -10,6 +19,10 @@
 
   font-weight: 600;
   color: #ffffff;
+
+  @media (min-width: 650px) {
+    width: 48%;
+  }
 }
 
 .application-form__input--tel {
@@ -23,15 +36,25 @@
 }
 
 .application-form__label--privacy-policy {
-  display: inline-block;
-  margin-bottom: 24px;
+  display: block;
 
   box-sizing: border-box;
   width: 280px;
+  margin: 0 auto;
+  margin-bottom: 24px;
   padding-left: 32px;
 
   font-size: 10px;
   line-height: 14px;
+
+  @media (min-width: 321px) {
+    width: 86%;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 31px;
+    font-size: 11px;
+  }
 }
 
 .application-form__label--privacy-policy {

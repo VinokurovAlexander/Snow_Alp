@@ -3,6 +3,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+
+  @media (min-width: $tablet-width) {
+    justify-content: flex-start;
+    padding-top: 3px;
+  }
 }
 
 .main-nav__link {
@@ -23,6 +28,10 @@
   @media (min-width: 330px) {
     order: 2;
   }
+
+  @media (min-width: $tablet-width) {
+    margin-right: 1%;
+  }
 }
 
 .main-nav__moto {
@@ -36,6 +45,10 @@
   @media (min-width: 330px) {
     order: 3;
   }
+
+  @media (min-width: $tablet-width) {
+    margin-right: 15%;
+  }
 }
 
 .main-nav__telephone {
@@ -46,12 +59,12 @@
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
+  transition: all 0.5s ease;
 
   color: #ffffff;
 
   span {
     color: $color-main;
-    transition: all 0.5s ease;
   }
 
   &:hover span {
@@ -61,10 +74,21 @@
   @media (min-width: 330px) {
     order: 4;
   }
+
+  @media (min-width: $tablet-width) {
+    width: 36%;
+
+    font-size: 30px;
+    line-height: 48px;
+  }
 }
 
 .main-nav__menu-btn {
   @media (min-width: 330px) {
     order: 1;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-right: 5%;
   }
 }

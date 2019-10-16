@@ -3,27 +3,38 @@
   min-width: 320px;
   min-height: 781px;
   margin: 0 auto;
-  padding: 0 15px;
   padding-top: 25px;
 
   background-image: url('../img/bg-snow-clearance-mobile.png');
   background-repeat: no-repeat;
   background-position: center;
   background-color: #82736a;
+  background-size: cover;
 
-  @media (min-width: 321px) {
+  @media (min-width: 650px) {
+    min-height: 475px;
+
     background-image: url('../img/bg-snow-clearance-tablet.png');
     background-position: top center;
+    background-size: auto;
   }
+}
+
+.page-header__wrapper {
+  width: 91%;
+  margin: 0 auto;
 }
 
 .page-header__nav {
   margin-bottom: 36px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 29px;
+  }
 }
 
 .page-header__title {
-  max-width: 290px;
-  margin: 0 auto;
+  margin-top: 0;
   margin-bottom: 10px;
 
   font-size: 30px;
@@ -32,12 +43,20 @@
   color: $color-secondary;
   text-transform: uppercase;
   text-align: center;
+  transition: all 0.5s ease;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: -7px;
+
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
 
 .page-header__price {
   display: block;
 
-  width: 200px;
+  width: 86%;
   margin: 0 auto;
   margin-bottom: 37px;
 
@@ -46,12 +65,20 @@
   line-height: 25px;
   text-transform: uppercase;
   text-align: center;
+  transition: all 0.5s ease;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 22px;
+
+    font-size: 21px;
+    line-height: 25px;
+  }
 }
 
 .page-header__moto {
   display: block;
 
-  width: 290px;
+  width: 93%;
   margin: 0 auto;
   margin-bottom: 25px;
 
@@ -59,4 +86,8 @@
   line-height: 24px;
   font-weight: 400;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 23px;
+  }
 }
