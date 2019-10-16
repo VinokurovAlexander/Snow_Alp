@@ -15,7 +15,7 @@
     background-color: #ffffff;
     color: #000000;
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: 1401px) {
       left: 50%;
       transform: translateX(-50%);
 
@@ -23,7 +23,9 @@
       flex-wrap: wrap;
       flex-direction: column;
 
-      width: 1292px;
+      // width: 1292px;
+      max-width: 1292px;
+      width: 91%;
       min-height: 125px;
       padding: 0;
       padding-top: 31px;
@@ -58,5 +60,11 @@
 
   @media (min-width: $desktop-width) {
     margin-bottom: 0;
+  }
+}
+
+.main-menu__link {
+  @media (min-width: 1401px) {
+    display: none;
   }
 }

@@ -3,21 +3,22 @@
   margin: 0;
   list-style: none;
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: 1401px) {
     display: flex;
     flex-wrap: wrap;
     align-self: center;
     order: 2;
 
-
-    width: 630px;
+    // width: 630px;
+    max-width: 630px;
+    width: 50%;
   }
 }
 
 .nav-list__item {
   margin-bottom: 24px;
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: 1401px) {
     padding: 19px 10px;
     margin-right: 10%;
     margin-bottom: 0;
@@ -33,7 +34,7 @@
   color: #000000;
   text-decoration: none;
 
-  @media (min-width: $desktop-width) {
+  @media (min-width: 1400px) {
     color: #ffffff;
   }
 }

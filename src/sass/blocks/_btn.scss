@@ -27,4 +27,11 @@
     background-color: $color-secondary;
     color: #000000;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 22px 20px;
+
+    font-size: 18px;
+    line-height: 24px;
+  }
 }

@@ -57,11 +57,11 @@
 
   @media (min-width: $tablet-width) {
     font-size: 12px;
-    margin-right: 15%;
+    // margin-right: 15%;
   }
 
   @media (min-width: $desktop-width) {
-    margin-right: 53%;
+    // margin-right: 53%;
   }
 }
 
@@ -92,12 +92,19 @@
   @media (min-width: $tablet-width) {
     max-width: 300px;
     width: 36%;
+    margin-left: auto;
 
     font-size: 30px;
     line-height: 48px;
   }
 
+  @media (min-width: 1401px) {
+    width: 20%;
+  }
+
   @media (min-width: $desktop-width) {
+    width: 36%;
+    
     font-size: 36px;
     line-height: 48px;
   }
@@ -112,13 +119,7 @@
     margin-right: 5%;
   }
 
-  @media (min-width: $desktop-width) {
-    display: none;
-  }
-}
-
-.main-menu__link {
-  @media (min-width: $desktop-width) {
+  @media (min-width: 1401px) {
     display: none;
   }
 }
