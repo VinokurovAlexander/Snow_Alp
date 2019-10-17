@@ -53,6 +53,10 @@
 .main-menu__close-btn {
   top: 21px;
   right: 30px;
+
+  @media (min-width: 1401px) {
+    display: none;
+  }
 }
 
 .main-menu__nav-list {

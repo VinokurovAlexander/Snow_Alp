@@ -1,0 +1,38 @@
+.callback-form__input {
+  max-width: none;
+  width: 100%;
+
+  color: #ffffff;
+}
+
+.callback-form__label--privacy-policy {
+  width: 100%;
+}
+
+.callback-form__input--tel {
+  // @media (min-width: $desktop-width) {
+    margin-bottom: 33px;
+  // }
+}
+
+.callback-form__label--privacy-policy {
+  // @media (min-width: $desktop-width) {
+    padding-left: 33px;
+    margin-bottom: 27px;
+  // }
+
+  &:before {
+    // @media (min-width: $desktop-width) {
+      top: 5px;
+      left: 4px;
+    // }
+  }
+}
+
+.callback-form__btn {
+  @media (min-width: $tablet-width) {
+    width: 60%;
+  }
+
+  background-color: #313131;
+}

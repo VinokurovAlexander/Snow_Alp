@@ -85,6 +85,10 @@
     color: $color-secondary;
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media (min-width: 330px) {
     order: 4;
   }
@@ -104,7 +108,7 @@
 
   @media (min-width: $desktop-width) {
     width: 36%;
-    
+
     font-size: 36px;
     line-height: 48px;
   }

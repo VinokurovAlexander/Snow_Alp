@@ -47,7 +47,7 @@
             <ul class="main-menu__features-list features-list">
               <li class="features-list__item">Снег и лед могут появится неожидано, <strong>поэтому мы работаем 24/7</strong></li>
               <li class="features-list__item">Мы открыты для предложений и идей — <a class="features-list__link" href="#">hello@snow-alp.ru</a></li>
-              <li class="features-list__item">Мы легко можем перезвонить сами — <a class="features-list__link" href="#">обратный звонок</a></li>
+              <li class="features-list__item">Мы легко можем перезвонить сами — <a class="features-list__link features-list__link--callback" href="#">обратный звонок</a></li>
             </ul>
             <button class="main-menu__close-btn close-btn" type="button">
               <span class="visually-hidden">Кнопка закрытия меню</span>
@@ -64,35 +64,37 @@
         <h1 class="page-header__title">Очистка снега с крыш</h1>
         <b class="page-header__price">Промышленными альпинистами от 25 руб/м<sup>2</sup></b>
         <b class="page-header__moto">Оставьте заявку — в течение часа к вам выедет специалист</b>
-        <form class="page-header__form application-form">
+        <form class="page-header__form application-form callback-form">
           <label class="visually-hidden" for="user-name">Поле для ввода ФИО</label>
-          <input class="application-form__input" type="text" id="user-name" placeholder="Константин Сыромятников">
+          <input class="application-form__input" type="text" id="user-name" placeholder="Константин Сыромятников" required>
           <label class="visually-hidden" for="telephone">Поле для ввода телефона</label>
-          <input class="application-form__input application-form__input--tel" type="tel" id="telephone" placeholder="+7 (___) ___-__-__">
-          <input class="visually-hidden application-form__checkbox" type="checkbox" id="privacy-policy" checked>
+          <input class="application-form__input application-form__input--tel" type="tel" id="telephone" placeholder="+7 (___) ___-__-__" required>
+          <input class="visually-hidden application-form__checkbox" type="checkbox" id="privacy-policy" name="privacy-policy" checked>
           <label class="application-form__label application-form__label--privacy-policy" for="privacy-policy">Я согласен с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
           <button class="application-form__btn btn" type="submit">Отправить заявку</button>
         </form>
       </div>
     </header>
-    <section class="callback-modal callback-modal--show">
+    <section class="callback-modal">
       <h2 class="callback-modal__title">Заявка на обратный звонок</h2>
       <b class="callback-modal__moto">
         Оставьте заявку и мы перезвоним вам в течение 15 минут
       </b>
-        <form class="callback-modal__form application-form">
+        <form class="callback-modal__form application-form callback-form" method="post">
           <label class="visually-hidden" for="modal-user-name">Поле для ввода ФИО</label>
-          <input class="application-form__input" type="text" id="modal-user-name" placeholder="Константин Сыромятников">
-          <label class="visually-hidden" for="telephone">Поле для ввода телефона</label>
-          <input class="application-form__input application-form__input--tel" type="tel" id="telephone" placeholder="+7 (___) ___-__-__">
-          <input class="visually-hidden application-form__checkbox" type="checkbox" id="privacy-policy" checked>
-          <label class="application-form__label application-form__label--privacy-policy" for="privacy-policy">Я согласен с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
-          <button class="application-form__btn btn btn--modal" type="submit">Перезвоните мне</button>
-          <button class="application-form__close-btn close-btn" type="button">
-            <span class="visually-hidden">Кнопка закрытия меню</span>
-          </button>
+          <input class="application-form__input callback-form__input" type="text" id="modal-user-name" placeholder="Константин Сыромятников" required>
+          <label class="visually-hidden" for="modal-telephone">Поле для ввода телефона</label>
+          <input class="application-form__input application-form__input--tel callback-form__input callback-form__input--tel" type="tel" id="modal-telephone" placeholder="+7 (___) ___-__-__" required>
+          <input class="visually-hidden application-form__checkbox" type="checkbox" id="modal-privacy-policy" name="modal-privacy-policy" checked>
+          <label class="application-form__label application-form__label--privacy-policy callback-form__label--privacy-policy" for="modal-privacy-policy">Я согласен с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
+          <button class="application-form__btn btn callback-form__btn" type="submit">Перезвоните мне</button>
         </form>
+        <button class="callback-modal__close-btn close-btn" type="button">
+          <span class="visually-hidden">Кнопка закрытия меню</span>
+        </button>
     </section>
     <script src="js/menu.js"></script>
+    <script src="js/callback.js"></script>
+    <script src="js/validate.js"></script>
   </body>
 </html>
