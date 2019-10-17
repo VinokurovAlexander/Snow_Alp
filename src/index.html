@@ -64,22 +64,15 @@
         <h1 class="page-header__title">Очистка снега с крыш</h1>
         <b class="page-header__price">Промышленными альпинистами от 25 руб/м<sup>2</sup></b>
         <b class="page-header__moto">Оставьте заявку — в течение часа к вам выедет специалист</b>
-        <form class="page-header__form form application-form">
+        <form class="page-header__form form-application form" method="post">
           <label class="visually-hidden" for="user-name">Поле для ввода ФИО</label>
-          <input class="form__input application-form__input" type="text" id="user-name" placeholder="Константин Сыромятников">
+          <input class="form__input" type="text" id="user-name" placeholder="Константин Сыромятников">
           <label class="visually-hidden" for="telephone">Поле для ввода телефона</label>
-          <input class="form__input application-form__input application-form__input--tel" type="tel" id="telephone" placeholder="+7 (___) ___-__-__">
-          <input class="visually-hidden form__checkbox
-                        application-form__checkbox
-                        "
-                        type="checkbox" id="privacy-policy" name="privacy-policy" checked>
-          <label class="form__label form__label--checkbox
-                        <!-- application-form__label
-                        application-form__label--privacy-policy -->
-                        "
-                        for="privacy-policy">
-            Я согласен с <a class="form__link application-form__link" href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
-          <button class="form__btn application-form__btn btn" type="submit">Отправить заявку</button>
+          <input class="form__input form__input--tel" type="tel" id="telephone" placeholder="+7 (___) ___-__-__">
+          <input class="visually-hidden form__checkbox" type="checkbox" id="privacy-policy" name="privacy-policy" checked>
+          <label class="form__label form__label--checkbox" for="privacy-policy">
+            Я согласен с <a class="form__link" href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
+          <button class="form-application__btn form__btn btn" type="submit">Отправить заявку</button>
         </form>
       </div>
     </header>
@@ -88,14 +81,14 @@
       <b class="callback-modal__moto">
         Оставьте заявку и мы перезвоним вам в течение 15 минут
       </b>
-        <form class="callback-modal__form application-form callback-form" method="post">
+        <form class="callback-modal__form callback-form form" method="post">
           <label class="visually-hidden" for="modal-user-name">Поле для ввода ФИО</label>
-          <input class="application-form__input callback-form__input" type="text" id="modal-user-name" placeholder="Константин Сыромятников" required>
+          <input class="callback-form__input form__input" type="text" id="modal-user-name" placeholder="Константин Сыромятников" required>
           <label class="visually-hidden" for="modal-telephone">Поле для ввода телефона</label>
-          <input class="application-form__input application-form__input--tel callback-form__input callback-form__input--tel" type="tel" id="modal-telephone" placeholder="+7 (___) ___-__-__" required>
-          <input class="visually-hidden application-form__checkbox" type="checkbox" id="modal-privacy-policy" name="modal-privacy-policy" checked>
-          <label class="application-form__label application-form__label--privacy-policy callback-form__label--privacy-policy" for="modal-privacy-policy">Я согласен с <a class="application-form__link callback-form__link" href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
-          <button class="application-form__btn btn callback-form__btn" type="submit">Перезвоните мне</button>
+          <input class="callback-form__input callback-form__input--tel form__input" type="tel" id="modal-telephone" placeholder="+7 (___) ___-__-__" required>
+          <input class="visually-hidden form__checkbox" type="checkbox" id="modal-privacy-policy" name="modal-privacy-policy" checked>
+          <label class="form__label form__label--checkbox callback-form__label" for="modal-privacy-policy">Я согласен с <a class="callback-form__link form__link" href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
+          <button class="btn form__btn callback-form__btn" type="submit">Перезвоните мне</button>
         </form>
         <button class="callback-modal__close-btn close-btn" type="button">
           <span class="visually-hidden">Кнопка закрытия меню</span>

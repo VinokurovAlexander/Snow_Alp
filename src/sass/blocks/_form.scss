@@ -1,3 +1,15 @@
+.form {
+  max-width: 847px;
+  margin: 0 auto;
+
+  @media (min-width: 650px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
 .form__input {
   box-sizing: border-box;
   width: 100%;
@@ -22,6 +34,10 @@
     font-size: 18px;
     line-height: 21px;
   }
+}
+
+.form__input--tel {
+  margin-bottom: 30px;
 }
 
 .form__label {
@@ -95,7 +111,7 @@
   background-color: $color-main;
 }
 
-.application-form__checkbox:checked + .application-form__label--privacy-policy:hover::before {
+.form__checkbox:checked + .form__label--checkbox:hover::before {
   background-color: #989898;
 }
 
