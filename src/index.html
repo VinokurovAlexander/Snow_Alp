@@ -76,9 +76,9 @@
         </form>
       </div>
     </header>
-    <section class="callback-modal">
-      <h2 class="callback-modal__title">Заявка на обратный звонок</h2>
-      <b class="callback-modal__moto">
+    <section class="callback-modal popup">
+      <h2 class="callback-modal__title popup__title">Заявка на обратный звонок</h2>
+      <b class="callback-modal__info popup__info">
         Оставьте заявку и мы перезвоним вам в течение 15 минут
       </b>
         <form class="callback-modal__form callback-form form" method="post">
@@ -90,9 +90,19 @@
           <label class="form__label form__label--checkbox callback-form__label" for="modal-privacy-policy">Я согласен с <a class="callback-form__link form__link" href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
           <button class="btn form__btn callback-form__btn" type="submit">Перезвоните мне</button>
         </form>
-        <button class="callback-modal__close-btn close-btn" type="button">
+        <button class="popup__close-btn callback-modal__close-btn close-btn" type="button">
           <span class="visually-hidden">Кнопка закрытия меню</span>
         </button>
+    </section>
+    <section class="popup popup--success">
+      <h2 class="popup__title">Заявка успешно отправлена!</h2>
+      <p class="popup__info">Спасибо за оставленную заявку, менеджер свяжется с вами в течение 15 минут<p>
+      <button class="close-btn popup__close-btn popup__close-btn--success" type="button">
+        <span class="visually-hidden">Кнопка закрытия меню</span>
+      </button>
+      <div class="popup__ok-icon">
+        <span class="visually-hidden">Окей иконка</span>
+      </div>
     </section>
     <script src="js/menu.js"></script>
     <script src="js/callback.js"></script>
