@@ -1,0 +1,28 @@
+.icon-ok {
+  position: relative;
+
+  width: 62px;
+  height: 62px;
+
+  outline: 1px solid red;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+
+    background-color: #ffffff;
+    border-radius: 4px;
+  }
+
+  &::after {
+    top: 42px;
+    left: -3px;
+    transform: rotate(45deg);
+
+    width: 29px;
+  }
+
+  
+}

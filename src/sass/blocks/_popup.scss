@@ -10,9 +10,14 @@
   align-items: center;
 
   box-sizing: border-box;
+  max-width: 600px;
+  width: 95%;
+  padding: 3% 2%;
+  // padding-top: 3%;
 
   background: linear-gradient(45deg, #50b1d7, #1b92c1);
   border-radius: 15px;
+
 }
 
 .popup--show {
@@ -41,6 +46,10 @@
   }
 }
 
+.popup__close-btn--success {
+  top: 19%;
+}
+
 .popup__title {
   width: 60%;
   margin: 0;
@@ -55,12 +64,18 @@
 
 .popup__info {
   width: 80%;
+  margin: 0;
   margin-bottom: 32px;
 
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
   text-align: center;
+}
+
+.popup__info--success {
+  width: 96%;
+  margin-bottom: 18px;
 }
 
 .popup--success {
