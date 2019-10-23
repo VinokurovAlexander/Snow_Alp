@@ -1,16 +1,20 @@
-var callbackModalWindow = document.querySelector('.callback-modal');
-var openBtn = document.querySelector('.features-list__link--callback');
-var closeBtn = document.querySelector('.callback-modal__close-btn');
+'use strict';
 
-var openWidnowBtnHandler = function () {
-  callbackModalWindow.classList.toggle('popup--show');
-};
+(function () {
+  var callbackModalWindow = document.querySelector('.callback-modal');
+  var openBtn = document.querySelector('.features-list__link--callback');
+  var closeBtn = document.querySelector('.callback-modal__close-btn');
 
-var closeWindowBtnHandler = function () {
-  if (callbackModalWindow.classList.contains('popup--show')) {
-    callbackModalWindow.classList.remove('popup--show');
-  }
-};
+  var openWidnowBtnHandler = function () {
+    callbackModalWindow.classList.toggle('popup--show');
+  };
 
-openBtn.addEventListener('click', openWidnowBtnHandler);
-closeBtn.addEventListener('click', closeWindowBtnHandler);
+  var closeWindowBtnHandler = function () {
+    if (callbackModalWindow.classList.contains('popup--show')) {
+      callbackModalWindow.classList.remove('popup--show');
+    }
+  };
+
+  openBtn.addEventListener('click', openWidnowBtnHandler);
+  closeBtn.addEventListener('click', closeWindowBtnHandler);
+})();

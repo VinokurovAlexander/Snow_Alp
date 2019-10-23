@@ -4,8 +4,6 @@
   width: 62px;
   height: 62px;
 
-  outline: 1px solid red;
-
   &::after,
   &::before {
     content: "";
@@ -24,5 +22,12 @@
     width: 29px;
   }
 
-  
+  &::before {
+    top: 30px;
+    left: 11px;
+    transform: rotate(-45deg);
+
+    width: 60px;
+  }
+
 }
