@@ -68,8 +68,8 @@
           <label class="visually-hidden" for="user-name">Поле для ввода ФИО</label>
           <input class="form__input" type="text" id="user-name" placeholder="Константин Сыромятников">
           <label class="visually-hidden" for="telephone">Поле для ввода телефона</label>
-          <input class="form__input form__input--tel" type="tel" id="telephone" placeholder="+7 (___) ___-__-__">
-          <input class="visually-hidden form__checkbox" type="checkbox" id="privacy-policy" name="privacy-policy" checked>
+          <input class="form__input form__input--tel" type="tel" id="telephone" placeholder="+7-(___)-___-__-__">
+          <input class="visually-hidden form__checkbox form-application__checkbox" type="checkbox" id="privacy-policy" name="privacy-policy" checked>
           <label class="form__label form__label--checkbox" for="privacy-policy">
             Я согласен с <a class="form__link" href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
           <button class="form-application__btn form__btn btn" type="submit">Отправить заявку</button>
@@ -86,7 +86,7 @@
           <input class="callback-form__input form__input" type="text" id="modal-user-name" placeholder="Константин Сыромятников" required>
           <label class="visually-hidden" for="modal-telephone">Поле для ввода телефона</label>
           <input class="callback-form__input callback-form__input--tel form__input" type="tel" id="modal-telephone" placeholder="+7 (___) ___-__-__" required>
-          <input class="visually-hidden form__checkbox" type="checkbox" id="modal-privacy-policy" name="modal-privacy-policy" checked>
+          <input class="visually-hidden form__checkbox callback-modal__checkbox" type="checkbox" id="modal-privacy-policy" name="modal-privacy-policy" checked>
           <label class="form__label form__label--checkbox callback-form__label" for="modal-privacy-policy">Я согласен с <a class="callback-form__link form__link" href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
           <button class="btn form__btn callback-form__btn" type="submit">Перезвоните мне</button>
         </form>
@@ -104,6 +104,9 @@
         <span class="visually-hidden">Окей иконка</span>
       </div>
     </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.inputmask.js"></script>
+    <script src="js/mask.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/callback.js"></script>
     <script src="js/validate.js"></script>
