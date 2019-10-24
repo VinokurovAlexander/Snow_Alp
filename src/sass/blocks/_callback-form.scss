@@ -5,33 +5,33 @@
   color: #ffffff;
 }
 
+.callback-form__checkbox {
+  top: 61%;
+  left: 2%;
+}
+
 .callback-form__label {
   width: 100%;
+  line-height: 17px;
 }
 
 .callback-form__input--tel {
-  // @media (min-width: $desktop-width) {
     margin-bottom: 33px;
-  // }
 }
 
 .callback-form__label--checkbox {
-  // @media (min-width: $desktop-width) {
-    padding-left: 33px;
     margin-bottom: 27px;
-  // }
 
-  &:before {
-    // @media (min-width: $desktop-width) {
-      top: 5px;
-      left: 4px;
-    // }
-  }
+    &:before {
+      top: 8px;
+      left: 9px;
+    }
 }
 
 .callback-form__btn {
   @media (min-width: $tablet-width) {
-    width: 60%;
+    width: 58%;
+    padding: 18px 10px;
   }
 
   background-color: #313131;

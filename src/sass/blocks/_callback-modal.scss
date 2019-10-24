@@ -1,12 +1,25 @@
 .callback-modal {
+  padding: 9% 7%;
   padding-bottom: 65px;
 
   @media (min-width: 1401px) {
-    padding-bottom: 5%;
+    padding-bottom: 15%;
   }
 }
 
-.callback-modal__checkbox {
-  top: 61%;
-  left: 2%;
+.callback-modal__title {
+  margin-bottom: 17px;
+}
+
+.callback-modal__info {
+  margin-bottom: 30px;
+}
+
+.callback-modal + .fancybox-button {
+  @include close-btn;
+  @include popup__close-btn;
+}
+
+.callback-modal + .fancybox-button svg {
+  display: none;
 }

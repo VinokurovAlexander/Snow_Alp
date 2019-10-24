@@ -1,9 +1,9 @@
 .popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 50;
+  // position: fixed;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // z-index: 50;
 
   display: none;
   flex-direction: column;
@@ -11,7 +11,7 @@
 
   box-sizing: border-box;
   max-width: 600px;
-  width: 95%;
+  width: 100%;
   padding: 3% 2%;
 
   background: linear-gradient(45deg, #50b1d7, #1b92c1);
@@ -35,6 +35,17 @@
 }
 
 .popup__close-btn {
+  top: 10%;
+  right: 7%;
+  transform: translate(13%, 8%);
+
+  &::after,
+  &::before {
+    background-color: #ffffff;
+  }
+}
+
+@mixin popup__close-btn {
   top: 10%;
   right: 7%;
   transform: translate(13%, 8%);
