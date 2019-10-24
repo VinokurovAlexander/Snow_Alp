@@ -10,9 +10,13 @@
   Form.prototype.validate = function () {
     var inputs = this.element.querySelectorAll('.form__input');
 
+
     inputs.forEach(function (input) {
       if (!input.value) {
         input.setCustomValidity('Необходимо заполнить данное поле');
+        input.style.boxShadow = ' 0 0 2px 2px red';
+      } else if (input.getAttribute('type') === 'tel' && input.value.replace(/\D+/g, '').length < 11) {
+        input.setCustomValidity('Данное поле необходимо заполнить полностью');
         input.style.boxShadow = ' 0 0 2px 2px red';
       } else {
         input.setCustomValidity('');

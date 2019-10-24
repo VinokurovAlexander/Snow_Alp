@@ -69,7 +69,7 @@
           <label class="visually-hidden" for="user-name">Поле для ввода ФИО</label>
           <input class="form__input" type="text" id="user-name" placeholder="Константин Сыромятников">
           <label class="visually-hidden" for="telephone">Поле для ввода телефона</label>
-          <input class="form__input form__input--tel" type="tel" id="telephone" placeholder="+7-(___)-___-__-__">
+          <input class="form__input form__input--tel" type="tel" id="telephone" placeholder="+7-(___)-___-__-__" minlength="240">
           <input class="visually-hidden form__checkbox form-application__checkbox" type="checkbox" id="privacy-policy" name="privacy-policy" checked>
           <label class="form__label form__label--checkbox" for="privacy-policy">
             Я согласен с <a class="form__link" href="#">политикой конфиденциальности</a> и даю согласие на обработку персональных данных</label>
@@ -107,8 +107,8 @@
       <a class="visually-hidden popup__open-btn--success" href="#popup-success" data-fancybox data-touch="false">Кнопка открытия окна</button>
     </a>
     <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.inputmask.js"></script>
     <script src="js/jquery.fancybox.js"></script>
+    <script src="js/inputmask.js"></script>
     <script src="js/mask.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/callback.js"></script>

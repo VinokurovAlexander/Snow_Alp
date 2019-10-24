@@ -1,16 +1,16 @@
 /*!
- * dist/jquery.inputmask
+ * dist/inputmask
  * https://github.com/RobinHerbots/Inputmask
  * Copyright (c) 2010 - 2019 Robin Herbots
  * Licensed under the MIT license
  * Version: 5.0.0-beta.292
  */
 !function webpackUniversalModuleDefinition(root, factory) {
-    if ("object" == typeof exports && "object" == typeof module) module.exports = factory(require("jquery")); else if ("function" == typeof define && define.amd) define([ "jquery" ], factory); else {
-        var a = "object" == typeof exports ? factory(require("jquery")) : factory(root.jQuery);
+    if ("object" == typeof exports && "object" == typeof module) module.exports = factory(); else if ("function" == typeof define && define.amd) define([], factory); else {
+        var a = factory();
         for (var i in a) ("object" == typeof exports ? exports : root)[i] = a[i];
     }
-}(window, function(__WEBPACK_EXTERNAL_MODULE__3__) {
+}(window, function() {
     return modules = [ function(module) {
         module.exports = JSON.parse('{"BACKSPACE":8,"BACKSPACE_SAFARI":127,"DELETE":46,"DOWN":40,"END":35,"ENTER":13,"ESCAPE":27,"HOME":36,"INSERT":45,"LEFT":37,"PAGE_DOWN":34,"PAGE_UP":33,"RIGHT":39,"SPACE":32,"TAB":9,"UP":38,"X":88,"CONTROL":17}');
     }, function(module, exports, __webpack_require__) {
@@ -22,7 +22,7 @@
                 return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
             }, _typeof(obj);
         }
-        var $ = __webpack_require__(2), window = __webpack_require__(4), document = window.document, generateMaskSet = __webpack_require__(5).generateMaskSet, analyseMask = __webpack_require__(5).analyseMask, maskScope = __webpack_require__(8);
+        var $ = __webpack_require__(2), window = __webpack_require__(3), document = window.document, generateMaskSet = __webpack_require__(4).generateMaskSet, analyseMask = __webpack_require__(4).analyseMask, maskScope = __webpack_require__(7);
         function Inputmask(alias, options, internal) {
             if (!(this instanceof Inputmask)) return new Inputmask(alias, options, internal);
             this.el = void 0, this.events = {}, this.maskset = void 0, this.refreshValue = !1, 
@@ -239,11 +239,136 @@
         }, Inputmask.dependencyLib = $, window.Inputmask = Inputmask, module.exports = Inputmask;
     }, function(module, exports, __webpack_require__) {
         "use strict";
-        var jquery = __webpack_require__(3);
-        if (void 0 === jquery) throw "jQuery not loaded!";
-        module.exports = jquery;
-    }, function(module, exports) {
-        module.exports = __WEBPACK_EXTERNAL_MODULE__3__;
+        function _typeof(obj) {
+            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
+                return typeof obj;
+            } : function _typeof(obj) {
+                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+            }, _typeof(obj);
+        }
+        var window = __webpack_require__(3), document = window.document;
+        function indexOf(list, elem) {
+            for (var i = 0, len = list.length; i < len; i++) if (list[i] === elem) return i;
+            return -1;
+        }
+        function isWindow(obj) {
+            return null != obj && obj === obj.window;
+        }
+        function isArraylike(obj) {
+            var length = "length" in obj && obj.length, ltype = _typeof(obj);
+            return "function" !== ltype && !isWindow(obj) && (!(1 !== obj.nodeType || !length) || ("array" === ltype || 0 === length || "number" == typeof length && 0 < length && length - 1 in obj));
+        }
+        function isValidElement(elem) {
+            return elem instanceof Element;
+        }
+        function DependencyLib(elem) {
+            return elem instanceof DependencyLib ? elem : this instanceof DependencyLib ? void (null != elem && elem !== window && (this[0] = elem.nodeName ? elem : void 0 !== elem[0] && elem[0].nodeName ? elem[0] : document.querySelector(elem), 
+            void 0 !== this[0] && null !== this[0] && (this[0].eventRegistry = this[0].eventRegistry || {}))) : new DependencyLib(elem);
+        }
+        DependencyLib.prototype = {
+            on: function on(events, handler) {
+                function addEvent(ev, namespace) {
+                    elem.addEventListener ? elem.addEventListener(ev, handler, !1) : elem.attachEvent && elem.attachEvent("on" + ev, handler), 
+                    eventRegistry[ev] = eventRegistry[ev] || {}, eventRegistry[ev][namespace] = eventRegistry[ev][namespace] || [], 
+                    eventRegistry[ev][namespace].push(handler);
+                }
+                if (isValidElement(this[0])) for (var eventRegistry = this[0].eventRegistry, elem = this[0], _events = events.split(" "), endx = 0; endx < _events.length; endx++) {
+                    var nsEvent = _events[endx].split("."), ev = nsEvent[0], namespace = nsEvent[1] || "global";
+                    addEvent(ev, namespace);
+                }
+                return this;
+            },
+            off: function off(events, handler) {
+                var eventRegistry, elem;
+                function removeEvent(ev, namespace, handler) {
+                    if (ev in eventRegistry == !0) if (elem.removeEventListener ? elem.removeEventListener(ev, handler, !1) : elem.detachEvent && elem.detachEvent("on" + ev, handler), 
+                    "global" === namespace) for (var nmsp in eventRegistry[ev]) eventRegistry[ev][nmsp].splice(eventRegistry[ev][nmsp].indexOf(handler), 1); else eventRegistry[ev][namespace].splice(eventRegistry[ev][namespace].indexOf(handler), 1);
+                }
+                function resolveNamespace(ev, namespace) {
+                    var evts = [], hndx, hndL;
+                    if (0 < ev.length) if (void 0 === handler) for (hndx = 0, hndL = eventRegistry[ev][namespace].length; hndx < hndL; hndx++) evts.push({
+                        ev: ev,
+                        namespace: namespace && 0 < namespace.length ? namespace : "global",
+                        handler: eventRegistry[ev][namespace][hndx]
+                    }); else evts.push({
+                        ev: ev,
+                        namespace: namespace && 0 < namespace.length ? namespace : "global",
+                        handler: handler
+                    }); else if (0 < namespace.length) for (var evNdx in eventRegistry) for (var nmsp in eventRegistry[evNdx]) if (nmsp === namespace) if (void 0 === handler) for (hndx = 0, 
+                    hndL = eventRegistry[evNdx][nmsp].length; hndx < hndL; hndx++) evts.push({
+                        ev: evNdx,
+                        namespace: nmsp,
+                        handler: eventRegistry[evNdx][nmsp][hndx]
+                    }); else evts.push({
+                        ev: evNdx,
+                        namespace: nmsp,
+                        handler: handler
+                    });
+                    return evts;
+                }
+                if (isValidElement(this[0])) {
+                    eventRegistry = this[0].eventRegistry, elem = this[0];
+                    for (var _events = events.split(" "), endx = 0; endx < _events.length; endx++) for (var nsEvent = _events[endx].split("."), offEvents = resolveNamespace(nsEvent[0], nsEvent[1]), i = 0, offEventsL = offEvents.length; i < offEventsL; i++) removeEvent(offEvents[i].ev, offEvents[i].namespace, offEvents[i].handler);
+                }
+                return this;
+            },
+            trigger: function trigger(events, argument_1) {
+                if (isValidElement(this[0])) for (var eventRegistry = this[0].eventRegistry, elem = this[0], _events = "string" == typeof events ? events.split(" ") : [ events.type ], endx = 0; endx < _events.length; endx++) {
+                    var nsEvent = _events[endx].split("."), ev = nsEvent[0], namespace = nsEvent[1] || "global";
+                    if (void 0 !== document && "global" === namespace) {
+                        var evnt, i, params = {
+                            bubbles: !0,
+                            cancelable: !0,
+                            detail: argument_1
+                        };
+                        if (document.createEvent) {
+                            try {
+                                evnt = new CustomEvent(ev, params);
+                            } catch (e) {
+                                evnt = document.createEvent("CustomEvent"), evnt.initCustomEvent(ev, params.bubbles, params.cancelable, params.detail);
+                            }
+                            events.type && DependencyLib.extend(evnt, events), elem.dispatchEvent(evnt);
+                        } else evnt = document.createEventObject(), evnt.eventType = ev, evnt.detail = argument_1, 
+                        events.type && DependencyLib.extend(evnt, events), elem.fireEvent("on" + evnt.eventType, evnt);
+                    } else if (void 0 !== eventRegistry[ev]) if (events = events.type ? events : DependencyLib.Event(events), 
+                    events.detail = arguments.slice(1), "global" === namespace) for (var nmsp in eventRegistry[ev]) for (i = 0; i < eventRegistry[ev][nmsp].length; i++) eventRegistry[ev][nmsp][i].apply(elem, arguments); else for (i = 0; i < eventRegistry[ev][namespace].length; i++) eventRegistry[ev][namespace][i].apply(elem, arguments);
+                }
+                return this;
+            }
+        }, DependencyLib.isFunction = function(obj) {
+            return "function" == typeof obj;
+        }, DependencyLib.noop = function() {}, DependencyLib.isArray = Array.isArray, DependencyLib.inArray = function(elem, arr, i) {
+            return null == arr ? -1 : indexOf(arr, elem, i);
+        }, DependencyLib.valHooks = void 0, DependencyLib.isPlainObject = function(obj) {
+            return "object" === _typeof(obj) && !obj.nodeType && !isWindow(obj) && !(obj.constructor && !Object.hasOwnProperty.call(obj.constructor.prototype, "isPrototypeOf"));
+        }, DependencyLib.extend = function() {
+            var options, name, src, copy, copyIsArray, clone, target = arguments[0] || {}, i = 1, length = arguments.length, deep = !1;
+            for ("boolean" == typeof target && (deep = target, target = arguments[i] || {}, 
+            i++), "object" === _typeof(target) || DependencyLib.isFunction(target) || (target = {}), 
+            i === length && (target = this, i--); i < length; i++) if (null != (options = arguments[i])) for (name in options) src = target[name], 
+            copy = options[name], target !== copy && (deep && copy && (DependencyLib.isPlainObject(copy) || (copyIsArray = DependencyLib.isArray(copy))) ? (clone = copyIsArray ? (copyIsArray = !1, 
+            src && DependencyLib.isArray(src) ? src : []) : src && DependencyLib.isPlainObject(src) ? src : {}, 
+            target[name] = DependencyLib.extend(deep, clone, copy)) : void 0 !== copy && (target[name] = copy));
+            return target;
+        }, DependencyLib.each = function(obj, callback) {
+            var value, i = 0;
+            if (isArraylike(obj)) for (var length = obj.length; i < length && (value = callback.call(obj[i], i, obj[i]), 
+            !1 !== value); i++) ; else for (i in obj) if (value = callback.call(obj[i], i, obj[i]), 
+            !1 === value) break;
+            return obj;
+        }, DependencyLib.data = function(owner, key, value) {
+            if (void 0 === value) return owner.__data ? owner.__data[key] : null;
+            owner.__data = owner.__data || {}, owner.__data[key] = value;
+        }, "function" == typeof window.CustomEvent ? DependencyLib.Event = window.CustomEvent : (DependencyLib.Event = function(event, params) {
+            params = params || {
+                bubbles: !1,
+                cancelable: !1,
+                detail: void 0
+            };
+            var evt = document.createEvent("CustomEvent");
+            return evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail), 
+            evt;
+        }, DependencyLib.Event.prototype = window.Event.prototype), module.exports = DependencyLib;
     }, function(module, exports, __webpack_require__) {
         "use strict";
         var __WEBPACK_AMD_DEFINE_RESULT__;
@@ -516,7 +641,7 @@
         };
     }, function(module, exports, __webpack_require__) {
         "use strict";
-        __webpack_require__(7), __webpack_require__(9), __webpack_require__(10), module.exports = __webpack_require__(1);
+        __webpack_require__(6), __webpack_require__(8), __webpack_require__(9), module.exports = __webpack_require__(1);
     }, function(module, exports, __webpack_require__) {
         "use strict";
         var Inputmask = __webpack_require__(1);
@@ -613,7 +738,7 @@
                 return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
             }, _typeof(obj);
         }
-        var $ = __webpack_require__(2), window = __webpack_require__(4), document = window.document, ua = window.navigator && window.navigator.userAgent || "", ie = 0 < ua.indexOf("MSIE ") || 0 < ua.indexOf("Trident/"), mobile = "ontouchstart" in window, iemobile = /iemobile/i.test(ua), iphone = /iphone/i.test(ua) && !iemobile, keyCode = __webpack_require__(0);
+        var $ = __webpack_require__(2), window = __webpack_require__(3), document = window.document, ua = window.navigator && window.navigator.userAgent || "", ie = 0 < ua.indexOf("MSIE ") || 0 < ua.indexOf("Trident/"), mobile = "ontouchstart" in window, iemobile = /iemobile/i.test(ua), iphone = /iphone/i.test(ua) && !iemobile, keyCode = __webpack_require__(0);
         module.exports = function maskScope(actionObj, maskset, opts) {
             maskset = maskset || this.maskset, opts = opts || this.opts;
             var inputmask = this, el = this.el, isRTL = this.isRTL || (this.isRTL = opts.numericInput), undoValue, $el, skipKeyPressEvent = !1, skipInputEvent = !1, validationEvent = !1, ignorable = !1, maxLength, mouseEnter = !1, originalPlaceholder = void 0;
@@ -2382,74 +2507,6 @@
                 digitsOptional: !1
             }
         }), module.exports = Inputmask;
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        function _typeof(obj) {
-            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function _typeof(obj) {
-                return typeof obj;
-            } : function _typeof(obj) {
-                return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-            }, _typeof(obj);
-        }
-        var $ = __webpack_require__(3), Inputmask = __webpack_require__(1);
-        void 0 === $.fn.inputmask && ($.fn.inputmask = function(fn, options) {
-            var nptmask, input = this[0];
-            if (void 0 === options && (options = {}), "string" == typeof fn) switch (fn) {
-              case "unmaskedvalue":
-                return input && input.inputmask ? input.inputmask.unmaskedvalue() : $(input).val();
-
-              case "remove":
-                return this.each(function() {
-                    this.inputmask && this.inputmask.remove();
-                });
-
-              case "getemptymask":
-                return input && input.inputmask ? input.inputmask.getemptymask() : "";
-
-              case "hasMaskedValue":
-                return !(!input || !input.inputmask) && input.inputmask.hasMaskedValue();
-
-              case "isComplete":
-                return !input || !input.inputmask || input.inputmask.isComplete();
-
-              case "getmetadata":
-                return input && input.inputmask ? input.inputmask.getmetadata() : void 0;
-
-              case "setvalue":
-                Inputmask.setValue(input, options);
-                break;
-
-              case "option":
-                if ("string" != typeof options) return this.each(function() {
-                    if (void 0 !== this.inputmask) return this.inputmask.option(options);
-                });
-                if (input && void 0 !== input.inputmask) return input.inputmask.option(options);
-                break;
-
-              default:
-                return options.alias = fn, nptmask = new Inputmask(options), this.each(function() {
-                    nptmask.mask(this);
-                });
-            } else {
-                if (Array.isArray(fn)) return options.alias = fn, nptmask = new Inputmask(options), 
-                this.each(function() {
-                    nptmask.mask(this);
-                });
-                if ("object" == _typeof(fn)) return nptmask = new Inputmask(fn), void 0 === fn.mask && void 0 === fn.alias ? this.each(function() {
-                    if (void 0 !== this.inputmask) return this.inputmask.option(fn);
-                    nptmask.mask(this);
-                }) : this.each(function() {
-                    nptmask.mask(this);
-                });
-                if (void 0 === fn) return this.each(function() {
-                    nptmask = new Inputmask(options), nptmask.mask(this);
-                });
-            }
-        });
-    }, function(module, exports, __webpack_require__) {
-        "use strict";
-        var im = __webpack_require__(6), jQuery = __webpack_require__(3);
-        im.dependencyLib === jQuery && __webpack_require__(11), module.exports = im;
     } ], installedModules = {}, __webpack_require__.m = modules, __webpack_require__.c = installedModules, 
     __webpack_require__.d = function(exports, name, getter) {
         __webpack_require__.o(exports, name) || Object.defineProperty(exports, name, {
@@ -2482,7 +2539,7 @@
         return __webpack_require__.d(getter, "a", getter), getter;
     }, __webpack_require__.o = function(object, property) {
         return Object.prototype.hasOwnProperty.call(object, property);
-    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 12);
+    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 5);
     function __webpack_require__(moduleId) {
         if (installedModules[moduleId]) return installedModules[moduleId].exports;
         var module = installedModules[moduleId] = {
