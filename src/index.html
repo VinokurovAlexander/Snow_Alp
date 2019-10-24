@@ -95,16 +95,17 @@
           <span class="visually-hidden">Кнопка закрытия меню</span>
         </button> -->
     </section>
-    <section class="popup popup--success">
+    <section class="popup popup--success" id="popup-success">
       <h2 class="popup__title">Заявка успешно отправлена!</h2>
       <p class="popup__info popup__info--success">Спасибо за оставленную заявку, менеджер свяжется с вами в течение 15 минут</p>
-      <button class="close-btn popup__close-btn popup__close-btn--success" type="button">
+      <!-- <button class="close-btn popup__close-btn popup__close-btn--success" type="button">
         <span class="visually-hidden">Кнопка закрытия меню</span>
-      </button>
+      </button> -->
       <div class="popup__icon-ok icon-ok">
         <span class="visually-hidden">Окей иконка</span>
       </div>
-    </section>
+      <a class="visually-hidden popup__open-btn--success" href="#popup-success" data-fancybox data-touch="false">Кнопка открытия окна</button>
+    </a>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.inputmask.js"></script>
     <script src="js/jquery.fancybox.js"></script>

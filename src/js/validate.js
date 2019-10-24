@@ -36,13 +36,15 @@
 
     this.element.addEventListener('submit', function (evt) {
       evt.preventDefault();
-      window.success.popup.classList.add('popup--show');
       this.element.reset();
 
-      if (this.wrapper && this.wrapper.classList.contains('popup--show')) {
-        this.wrapper.classList.remove('popup--show')
+      if (this.wrapper && this.wrapper.style.display === 'flex') {
+        this.wrapper.nextElementSibling.click();
       }
+      var successPopupOpenBtn = document.querySelector('.popup__open-btn--success');
+      successPopupOpenBtn.click();
     }.bind(this));
+
   };
 
   var applicationFormElement = document.querySelector('.form-application');

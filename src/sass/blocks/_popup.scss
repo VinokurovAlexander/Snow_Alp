@@ -1,10 +1,4 @@
 .popup {
-  // position: fixed;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
-  // z-index: 50;
-
   display: none;
   flex-direction: column;
   align-items: center;
@@ -16,48 +10,20 @@
 
   background: linear-gradient(45deg, #50b1d7, #1b92c1);
   border-radius: 15px;
-
+}
+.popup--success {
+  padding: 9% 2%;
 }
 
-.popup--show {
-  display: flex;
-  animation: popup-show 0.8s ease-out;
-}
+.popup--success + .fancybox-button {
+  @include close-btn;
+  @include popup__close-btn;
 
-@keyframes popup-show {
-  0% {
-    transform: translate(-50%, -200%);
-  }
-
-  100% {
-    transform: translate(-50%, -50%);
-  }
+  top: 19%;
 }
 
 .popup__close-btn {
-  top: 10%;
-  right: 7%;
-  transform: translate(13%, 8%);
-
-  &::after,
-  &::before {
-    background-color: #ffffff;
-  }
-}
-
-@mixin popup__close-btn {
-  top: 10%;
-  right: 7%;
-  transform: translate(13%, 8%);
-
-  &::after,
-  &::before {
-    background-color: #ffffff;
-  }
-}
-
-.popup__close-btn--success {
-  top: 19%;
+  @include popup__close-btn;
 }
 
 .popup__title {
