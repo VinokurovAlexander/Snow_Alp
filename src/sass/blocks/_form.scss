@@ -39,7 +39,11 @@
 }
 
 .form__input--tel {
-  margin-bottom: 30px;
+  margin-bottom: 26px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 30px;
+  }
 }
 
 .form__label {
@@ -57,7 +61,7 @@
   width: 280px;
   margin: 0 auto;
   margin-bottom: 24px;
-  padding-left: 32px;
+  padding-left: 29px;
 
   font-size: 10px;
   line-height: 14px;
@@ -66,7 +70,7 @@
     content: "";
     position: absolute;
     top: 2px;
-    left: 5px;
+    left: 1px;
 
     width: 9px;
     height: 9px;
@@ -76,6 +80,10 @@
     box-shadow: 0 0 0 6px #ffffff;
 
     transition: all 0.5s ease;
+
+    @media (min-width: $tablet-width) {
+      left: 5px;
+    }
 
     @media (min-width: $desktop-width) {
       top: 0px;
@@ -91,7 +99,9 @@
   }
 
   @media (min-width: $tablet-width) {
+    padding-left: 32px;
     margin-bottom: 31px;
+
     font-size: 11px;
   }
 

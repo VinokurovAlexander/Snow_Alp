@@ -74,7 +74,7 @@
   display: block;
 
   max-width: 1162px;
-  width: 87%;
+  width: 69%;
   margin: 0 auto;
   margin-bottom: 37px;
 
@@ -86,6 +86,7 @@
   transition: all 0.5s ease;
 
   @media (min-width: $tablet-width) {
+    width: 87%;
     margin-bottom: 22px;
 
     font-size: 21px;
@@ -104,7 +105,7 @@
 .page-header__moto {
   display: block;
 
-  width: 93%;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 25px;
 
@@ -114,6 +115,7 @@
   text-align: center;
 
   @media (min-width: $tablet-width) {
+    width: 93%;
     margin-bottom: 23px;
   }
 
