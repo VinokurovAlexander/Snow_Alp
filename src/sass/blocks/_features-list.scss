@@ -11,13 +11,13 @@
     flex-wrap: wrap;
     order: 1;
 
-    // width: 1292px;
     max-width: 1292px;
     width: 100%;
   }
 }
 
 .features-list__item {
+  max-width: 430px;
   margin-bottom: 19px;
 
   @media (min-width: 1401px) {

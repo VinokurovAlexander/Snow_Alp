@@ -8,6 +8,10 @@
     justify-content: flex-start;
     padding-top: 3px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 7px;
+  }
 }
 
 .main-nav__link {
