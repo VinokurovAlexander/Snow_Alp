@@ -3,6 +3,7 @@
 window.onscroll = function showNav() {
   var nav = document.querySelector('.main-nav');
   var header = document.querySelector('.page-header');
+  var menu = document.querySelector('.main-menu');
 
   if (window.pageYOffset > 50) {
     nav.classList.add('main-nav--fixed');

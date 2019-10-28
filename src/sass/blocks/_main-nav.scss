@@ -1,4 +1,8 @@
 .main-nav {
+  width: 100%;
+}
+
+.main-nav__wrapper {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -130,25 +134,26 @@
 .main-nav--fixed {
   position: fixed;
   z-index: 50;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
 
-  box-sizing: border-box;
-  max-width: 1315px;
   width: 100%;
-  padding: 10px 15px;
-
 
   background-color: #555555;
-  box-shadow: 500px 0 0 0 #555555, -500px 0 0 0 #555555;
   animation: show-nav 0.5s ease;
 
-  @media (min-width: 1412px) {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 0;
-    padding-left: 27px;
+  .main-nav__wrapper {
+    box-sizing: border-box;
+    max-width: 1315px;
+    margin: 0 auto;
+    padding: 10px 15px;
+
+    @media (min-width: 1412px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 0;
+      padding-left: 27px;
+    }
   }
 
   .main-nav__moto {
@@ -219,16 +224,24 @@
     width: 1006px;
   }
 
+  .main-menu--show {
+    @media (max-width: 1411px) {
+      width: 310px;
+    }
+  }
+
   .nav-list {
-    position: static;
+    @media (min-width: 1412px) {
+      position: static;
 
-    flex-direction: row;
-    order: 1;
+      flex-direction: row;
+      order: 1;
 
-    width: 630px;
-    margin-bottom: 0;
+      width: 630px;
+      margin-bottom: 0;
 
-    transform: none;
+      transform: none;
+    }
   }
 
   .nav-list__item {
@@ -247,11 +260,9 @@
 
 @keyframes show-nav {
   0% {
-    opacity: 0;
     top: -100px
   }
   100% {
-    opacity: 1;
     top: 0;
   }
 }
