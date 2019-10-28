@@ -6,7 +6,7 @@
   font-size: 12px;
   line-height: 16px;
 
-  @media (min-width: 1401px) {
+  @media (min-width: 1412px) {
     display: flex;
     flex-wrap: wrap;
     order: 1;
@@ -20,13 +20,13 @@
   max-width: 430px;
   margin-bottom: 19px;
 
-  @media (min-width: 1401px) {
-    margin-right: 5%;
-
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
+  @media (min-width: 1412px) {
+    margin-right: 69px;
   }
+}
+
+.features-list__item--last {
+  margin-right: 0;
 }
 
 .features-list__link {

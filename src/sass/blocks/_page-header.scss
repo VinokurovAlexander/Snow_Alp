@@ -55,7 +55,6 @@
   color: $color-secondary;
   text-transform: uppercase;
   text-align: center;
-  transition: all 0.5s ease;
 
   @media (min-width: $tablet-width) {
     margin-bottom: 0;
@@ -83,7 +82,6 @@
   line-height: 25px;
   text-transform: uppercase;
   text-align: center;
-  transition: all 0.5s ease;
 
   @media (min-width: $tablet-width) {
     width: 87%;
@@ -121,5 +119,21 @@
 
   @media (min-width: $desktop-width) {
     font-size: 18px;
+  }
+}
+
+.page-header--scroll {
+  padding-top: 159px;
+
+  @media (min-width: 586px) {
+    padding-top: 105px;
+  }
+
+  @media (min-width: 1412px) {
+    padding-top: 140px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 222px;
   }
 }

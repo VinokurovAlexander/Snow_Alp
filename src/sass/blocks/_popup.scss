@@ -6,13 +6,10 @@
   box-sizing: border-box;
   max-width: 600px;
   width: 100%;
-  padding: 3% 2%;
+  padding: 28px 6px;
 
   background: linear-gradient(45deg, #50b1d7, #1b92c1);
   border-radius: 15px;
-}
-.popup--success {
-  padding: 9% 2%;
 }
 
 .popup--success + .fancybox-button {

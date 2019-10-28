@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: $menus-index;
 
   display: none;
 
@@ -15,19 +15,14 @@
   background-color: #ffffff;
   color: #000000;
 
-  @media (min-width: 1401px) {
-    // left: 50%;
-    // transform: translateX(-50%);
+  @media (min-width: 1412px) {
     position: relative;
 
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 
-    // width: 1292px;
-    // max-width: 1292px;
     width: 100%;
-    // min-height: 125px;
     min-height: auto;
     padding: 0;
 
@@ -55,7 +50,7 @@
   top: 21px;
   right: 30px;
 
-  @media (min-width: 1401px) {
+  @media (min-width: 1412px) {
     display: none;
   }
 }
@@ -69,7 +64,7 @@
 }
 
 .main-menu__link {
-  @media (min-width: 1401px) {
+  @media (min-width: 1412px) {
     display: none;
   }
 }

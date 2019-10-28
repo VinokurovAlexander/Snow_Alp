@@ -1,0 +1,6 @@
+.link {
+  &:hover {
+    color: $color-secondary;
+    border-bottom-color: $color-secondary;
+  }
+}
