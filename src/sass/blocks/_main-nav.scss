@@ -130,15 +130,26 @@
 .main-nav--fixed {
   position: fixed;
   z-index: 50;
-  top: 0;
-  left: 0;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
 
   box-sizing: border-box;
+  max-width: 1315px;
   width: 100%;
   padding: 10px 15px;
 
+
   background-color: #555555;
+  box-shadow: 500px 0 0 0 #555555, -500px 0 0 0 #555555;
   animation: show-nav 0.5s ease;
+
+  @media (min-width: 1412px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0;
+    padding-left: 27px;
+  }
 
   .main-nav__moto {
     display: none;
@@ -154,17 +165,15 @@
     background-image: url('../img/icon-phone.png');
     background-size: cover;
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: 1412px) {
       width: auto;
+      margin-left: 0;
+      padding-bottom: 20px;
+
 
       font-size: 16px;
       background-image: none;
     }
-  }
-
-  .main-menu {
-    position: static;
-    width: auto;
   }
 
   .main-nav__menu-btn {
@@ -172,18 +181,67 @@
   }
 
   .main-nav__link {
-    margin-bottom: 0;
     order: 2;
+
+    margin-bottom: 0;
+    margin-right: 54px;
+
+    font-size: 24px;
+
+    @media (min-width: 1412px) {
+      order: 1;
+    }
+  }
+
+  .features-list__item {
+    @media (min-width: 1412px) {
+      margin-bottom: 0;
+    }
   }
 
   .features-list__item:not(.features-list__item--callback) {
-    @media (min-width: $desktop-width) {
+    @media (min-width: 1412px) {
       display: none;
     }
   }
 
+  .features-list {
+    @media (min-width: 1412px) {
+      width: auto;
+    }
+  }
+
+  .main-menu {
+    flex-direction: row;
+    align-items: center;
+    order: 2;
+
+    width: 1006px;
+  }
+
   .nav-list {
     position: static;
+
+    flex-direction: row;
+    order: 1;
+
+    width: 630px;
+    margin-bottom: 0;
+
+    transform: none;
+  }
+
+  .nav-list__item {
+    @media (min-width: 1412px) {
+      padding: 7px 10px;
+      margin-right: 43px;
+    }
+  }
+
+  .nav-list__item--last {
+    @media (min-width: 1412px) {
+      margin-right: 0;
+    }
   }
 }
 
